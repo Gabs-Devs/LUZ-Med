@@ -1,16 +1,11 @@
 # luzmed
 
-A new Flutter project.
+Trabalho de conclusão de curso.
 
-## Getting Started
+## Informações
 
-This project is a starting point for a Flutter application.
+Esse projeto está sendo realizado pelo grupo LUZMED, contendo os integrantes: Gabriel Perugini, Juan Alves, Miguel Henrique, Davi Almeida e Matheus Figueiredo.
 
-A few resources to get you started if this is your first Flutter project:
+Projeto realizado utilizando flutter e firebase
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Esse projeto não tem fins lucrativos
