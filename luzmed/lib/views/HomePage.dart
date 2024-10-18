@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -8,6 +9,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _selectedIndex = 0; // Estado para controlar o índice da aba
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   SizedBox(height: 30),
                   Text(
-                    "Oque deseja fazer hoje?",
+                    "O que deseja fazer hoje?",
                     style: TextStyle(
                         fontSize: 14.15,
                         color: Color.fromRGBO(234, 239, 255, 20)),
@@ -65,94 +68,128 @@ class _HomePageState extends State<HomePage> {
           ),
           Expanded(
             child: SafeArea(
-                child: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.25,
-                        height: MediaQuery.of(context).size.height * 0.15,
-                        decoration: BoxDecoration(
-                          color: Color.fromRGBO(120, 147, 239, 50),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(25),
+              child: SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(height: 30),
+                    // Aqui você pode adicionar os outros widgets que deseja exibir
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.25,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          decoration: BoxDecoration(
+                            color: Color.fromRGBO(120, 147, 239, 50),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(25),
+                            ),
                           ),
                         ),
-                      ),
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.25,
-                        height: MediaQuery.of(context).size.height * 0.15,
-                        decoration: BoxDecoration(
-                          color: Color.fromRGBO(120, 147, 239, 50),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(25),
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.25,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          decoration: BoxDecoration(
+                            color: Color.fromRGBO(120, 147, 239, 50),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(25),
+                            ),
                           ),
                         ),
-                      ),
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.25,
-                        height: MediaQuery.of(context).size.height * 0.15,
-                        decoration: BoxDecoration(
-                          color: Color.fromRGBO(120, 147, 239, 50),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(25),
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.25,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          decoration: BoxDecoration(
+                            color: Color.fromRGBO(120, 147, 239, 50),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(25),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.25,
-                        height: MediaQuery.of(context).size.height * 0.15,
-                        decoration: BoxDecoration(
-                          color: Color.fromRGBO(120, 147, 239, 50),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(25),
+                      ],
+                    ),
+                    SizedBox(height: 30),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.25,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          decoration: BoxDecoration(
+                            color: Color.fromRGBO(120, 147, 239, 50),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(25),
+                            ),
                           ),
                         ),
-                      ),
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.25,
-                        height: MediaQuery.of(context).size.height * 0.15,
-                        decoration: BoxDecoration(
-                          color: Color.fromRGBO(120, 147, 239, 50),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(25),
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.25,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          decoration: BoxDecoration(
+                            color: Color.fromRGBO(120, 147, 239, 50),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(25),
+                            ),
                           ),
                         ),
-                      ),
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.25,
-                        height: MediaQuery.of(context).size.height * 0.15,
-                        decoration: BoxDecoration(
-                          color: Color.fromRGBO(120, 147, 239, 50),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(25),
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.25,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          decoration: BoxDecoration(
+                            color: Color.fromRGBO(120, 147, 239, 50),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(25),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  )
-                ],
+                      ],
+                    )
+                  ],
+                ),
               ),
-            )),
+            ),
           ),
         ],
+      ),
+      bottomNavigationBar: Container(
+        color: Colors.black,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20),
+          child: GNav(
+            backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+            color: Colors.white,
+            activeColor: Colors.white,
+            gap: 8,
+            onTabChange: (index) {
+              setState(() {
+                _selectedIndex = index; // Atualiza o índice selecionado
+              });
+              print(index);
+            },
+            tabBackgroundColor: Colors.grey.shade800,
+            padding: EdgeInsets.all(16),
+            tabs: const [
+              GButton(
+                icon: Icons.home,
+                text: 'Home ',
+              ),
+              GButton(
+                icon: Icons.favorite_border,
+                text: 'Likes',
+              ),
+              GButton(
+                icon: Icons.search,
+                text: 'Search',
+              ),
+              GButton(
+                icon: Icons.settings,
+                text: 'Settings',
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
